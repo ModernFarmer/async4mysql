@@ -1,6 +1,6 @@
 ####本模块是将node-mysql模块进行简单封装, 旨在更加简单直观地进行同步操作异步调用或异步操作异步调用, 本模块的相关参数设定完全遵循node-mysql模块的相关设定.
 
-###下载:
+**下载:
 
 ```javascript
 npm install async4mysql -S
