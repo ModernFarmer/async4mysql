@@ -6,7 +6,7 @@
 npm install async4mysql -S
 ```
 
-###引入:
+**引入:**
 
 ```javascript
 const async4mysql = require('async4mysql');      //引入async4mysql模块
@@ -15,9 +15,9 @@ const db = new async4mysql(option);      //创建模块实例对象
 ```
 * `new async4mysql对象`会根据 `参数类型` 来创建一个 **单一连接池** 或者 **连接池集群**
 
-###使用:
+**使用:**
 
-###　单一连接池 \-\>
+**　单一连接池 \-\>**
 
 ```javascript
 当 new async4mysql(option) 的 option参数 是一个json, 那么 new async4mysql(option) 
@@ -35,7 +35,7 @@ const db = new async4mysql(option);      //创建模块实例对象
 \>\>\>\>\>　当**db对象**是一个**单一连接池**时, **db对象** 可以使用以下6个方法:<br>
 > * `.select()`,　`.delete()`,　`.update()`,　`.insert()`,　`.entire()`,　`.query()`
 
-##1:　.select()方法
+**1:　.select()方法**
 
 **.select()　　同步执行指定的mysql 查询语句 ( SELECT语句 )**
 
@@ -44,7 +44,7 @@ const db = new async4mysql(option);      //创建模块实例对象
 　　`sql:　要执行的mysql语句　　　　　　　　必须`<br>
 　　`arr:　防注入操作存放数据的数组　　　　可选`<br>
 
-####基础案例 :
+**基础案例 :**
 ```javascript
 ******在非async函数中使用: ******
 
@@ -109,7 +109,7 @@ app.post('/damo', async (req, res) => {
   res.json([result_1, result_2]);
 });
 ```
-##2:　.delete()方法
+**2:　.delete()方法**
 
 **.delete()　　同步执行指定的mysql 删除语句 ( DELETE语句 )**
 
@@ -118,7 +118,7 @@ app.post('/damo', async (req, res) => {
 　　`sql:　要执行的mysql语句　　　　　　　　必须`<br>
 　　`arr:　防注入操作存放数据的数组　　　　可选`<br>
 
-####基础案例 :
+**基础案例 :**
 ```javascript
 ******在非async函数中使用: ******
 
@@ -183,7 +183,7 @@ app.post('/damo', async (req, res) => {
   res.json([result_1, result_2]);
 });
 ```
-##3:　.update()方法
+**3:　.update()方法**
 
 **.update()　　同步执行指定的mysql 更新语句 ( UPDATE语句 )**
 
@@ -192,7 +192,7 @@ app.post('/damo', async (req, res) => {
 　　`sql:　要执行的mysql语句　　　　　　　　必须`<br>
 　　`arr:　防注入操作存放数据的数组　　　　可选`<br>
 
-####基础案例 :
+**基础案例 :**
 ```javascript
 ******在非async函数中使用: ******
 
@@ -257,7 +257,7 @@ app.post('/damo', async (req, res) => {
   res.json([result_1, result_2]);
 });
 ```
-##4:　.insert()方法
+**4:　.insert()方法**
 
 **.insert()　　同步执行指定的mysql 插入语句 ( UPDATE语句 )**
 
@@ -270,7 +270,7 @@ app.post('/damo', async (req, res) => {
 　　　`sql:　要执行的mysql语句的 插入内容键值对(json)　　必须`<br>
 　　　`arr:　需要操作的数据表的 表名字符串　　　　　　　　必须`<br>
 
-####基础案例 :
+**基础案例 :**
 ```javascript
 ******在非async函数中使用: ******
 
@@ -349,7 +349,7 @@ app.post('/damo', async (req, res)=>{
   res.json({ok:true, msg:'Oh! yeah~'});
 });
 ```
-##5:　.entire()方法
+**5:　.entire()方法**
 
 **.entire()　　\*可以异步执行 多个mysql操作, 并保证所有 mysql操作 都执行完毕后, 才返回相关数据**
 
@@ -368,7 +368,7 @@ app.post('/damo', async (req, res)=>{
   arr:  防注入操作存放数据的数组 [可选] 或者 INSERT操作的表名称字符串 (必须)
 }
 ```
-####基础案例 :
+**基础案例 :**
 ```javascript
 ******在非async函数中使用: ******
 
@@ -467,16 +467,16 @@ app.post('/damo', async (req, res)=>{
     res.json({ok:true, msg:'Oh! yeah~'});
 });
 ```
-##6:　.query()方法
+**6:　.query()方法**
 
-####.query()　　同步执行指定的 *所有类型mysql语句* ( 一般用于执行*除了* 增、删、改、查 外的mysql语句 )
+**.query()　　同步执行指定的 *所有类型mysql语句* ( 一般用于执行*除了* 增、删、改、查 外的mysql语句 )**
 
 　参数 :<br>
 　　**.query**( *sql*,　*arr* )<br>
 　　`sql:　要执行的mysql语句　　　　　　　　必须`<br>
 　　`arr:　防注入操作存放数据的数组　　　　可选`<br>
 
-####基础案例 :
+**基础案例 :**
 ```javascript
 ******在非async函数中使用: ******
 
@@ -546,7 +546,7 @@ app.post('/damo', async (req, res) => {
   res.json({ok:true, msg:'Oh! yeah~'});
 });
 ```
-###\-\-\-连接池集群\-\-\-
+**\-\-\-连接池集群\-\-\-**
 
 ```javascript
 当 new async4mysql(option) 的 option参数 是一个Array,
@@ -578,12 +578,12 @@ app.post('/damo', async (req, res) => {
     ......
   ]
 ```
-####*** 此时, new async4mysql(option)实例 会根据 **参数数组** 中的每一个 **值(json)** 的 `json.option` 来创建相应连接名为 `json.connectName` 的连接　<br><br>
-###*** 连接池集群 可以在 **同一个实例中** 对 **不同** 的 `mysql数据库` 进行操作!!! (单一连接池**只能**对 **同一个mysql数据库** 进行操作)　<br><br>
+** 此时, new async4mysql(option)实例 会根据 **参数数组** 中的每一个 **值(json)** 的 `json.option` 来创建相应连接名为 `json.connectName` 的连接**　<br><br>
+** 连接池集群 可以在 **同一个实例中** 对 **不同** 的 `mysql数据库` 进行操作!!! (单一连接池**只能**对 **同一个mysql数据库** 进行操作)**　<br><br>
 \>\>\>\>\>　当**db对象**是一个连接池集群时, **db对象**可以使用以下6个方法:<br>
 > * `.$select()`,　`.$delete()`,　`.$update()`,　`.$insert()`,　`.$entire()`,　`.$query()`
 
-##1:　.$select()方法
+**1:　.$select()方法**
 
 **.$select()　　同步执行指定的mysql 查询语句 ( SELECT语句 )**
 
@@ -593,7 +593,7 @@ app.post('/damo', async (req, res) => {
 　　`sql:　要执行的mysql语句　　　　　　　必须`<br>
 　　`arr:　防注入操作存放数据的数组　　　　可选`<br>
 
-####基础案例 :
+**基础案例 :**
 ```javascript
 ******在非async函数中使用: ******
 
@@ -669,7 +669,7 @@ app.post('/damo', async (req, res) => {
   res.json([result_1, result_2]);
 });
 ```
-##2:　.$delete()方法
+**2:　.$delete()方法**
 
 **.$delete()　　同步执行指定的mysql 删除语句 ( DELETE语句 )**
 
@@ -679,7 +679,7 @@ app.post('/damo', async (req, res) => {
 　　`sql:　要执行的mysql语句　　　　　　　必须`<br>
 　　`arr:　防注入操作存放数据的数组　　　　可选`<br>
 
-####基础案例 :
+**基础案例 :**
 ```javascript
 ******在非async函数中使用: ******
 
@@ -755,7 +755,7 @@ app.post('/damo', async (req, res) => {
   res.json([result_1, result_2]);
 });
 ```
-##3:　.$update()方法
+**3:　.$update()方法**
 
 **.$update()　　同步执行指定的mysql 更新语句 ( UPDATE语句 )**
 
@@ -765,7 +765,7 @@ app.post('/damo', async (req, res) => {
 　　`sql:　要执行的mysql语句　　　　　　　必须`<br>
 　　`arr:　防注入操作存放数据的数组　　　　可选`<br>
 
-####基础案例 :
+**基础案例 :**
 ```javascript
 ******在非async函数中使用: ******
 
@@ -841,7 +841,7 @@ app.post('/damo', async (req, res) => {
   res.json([result_1, result_2]);
 });
 ```
-##4:　.$insert()方法
+**4:　.$insert()方法**
 
 **.$insert()　　同步执行指定的mysql 插入语句 ( UPDATE语句 )**
 
@@ -856,7 +856,7 @@ app.post('/damo', async (req, res) => {
 　　　`sql:　要执行的mysql语句的 插入内容键值对(json)　　必须`<br>
 　　　`arr:　需要操作的数据表的 表名字符串　　　　　　　　必须`<br>
 
-####基础案例 :
+**基础案例 :**
 ```javascript
 ******在非async函数中使用: ******
 
@@ -947,7 +947,7 @@ app.post('/damo', async (req, res)=>{
   res.json({ok:true, msg:'Oh! yeah~'});
 });
 ```
-##5:　.$entire()方法
+**5:　.$entire()方法**
 
 **.$entire()　　\*可以异步执行 多个mysql操作, 并保证所有 mysql操作 都执行完毕后, 才返回相关数据**
 
@@ -967,7 +967,7 @@ app.post('/damo', async (req, res)=>{
   arr:  防注入操作存放数据的数组 [可选] 或者 INSERT操作的表名称字符串 (必须)
 }
 ```
-####基础案例 :
+**基础案例 :**
 ```javascript
 ******在非async函数中使用: ******
 
@@ -1082,9 +1082,9 @@ app.post('/damo', async (req, res)=>{
     res.json({ok:true, msg:'Oh! yeah~'});
 });
 ```
-##6:　.$query()方法
+**6:　.$query()方法**
 
-####.$query()　　同步执行指定的 *所有类型mysql语句* ( 一般用于执行*除了* 增、删、改、查 外的mysql语句 )
+**.$query()　　同步执行指定的 *所有类型mysql语句* ( 一般用于执行*除了* 增、删、改、查 外的mysql语句 )**
 
 　参数:<br>
 　　**.$query**( *connectName*,　*sql*,　*arr* )<br>
@@ -1092,7 +1092,7 @@ app.post('/damo', async (req, res)=>{
 　　`sql:　要执行的mysql语句　　　　　　　必须`<br>
 　　`arr:　防注入操作存放数据的数组　　　　可选`<br>
 
-####基础案例 :
+**基础案例 :**
 ```javascript
 ******在非async函数中使用: ******
 
@@ -1175,7 +1175,7 @@ app.post('/damo', async (req, res) => {
 });
 ```
 
-### *历史版本信息*
+** *历史版本信息* **
 ```javascript
 　版本:　　　　　　　　　1.0.0
 
