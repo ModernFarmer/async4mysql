@@ -578,8 +578,8 @@ app.post('/damo', async (req, res) => {
     ......
   ]
 ```
-** 此时, new async4mysql(option)实例 会根据 **参数数组** 中的每一个 **值(json)** 的 `json.option` 来创建相应连接名为 `json.connectName` 的连接**　<br><br>
-** 连接池集群 可以在 **同一个实例中** 对 **不同** 的 `mysql数据库` 进行操作!!! (单一连接池**只能**对 **同一个mysql数据库** 进行操作)**　<br><br>
+** 此时, new async4mysql(option)实例 会根据 *参数数组* 中的每一个 *值(json)* 的 `json.option` 来创建相应连接名为 `json.connectName` 的连接**　<br><br>
+** 连接池集群 可以在 *同一个实例中* 对 *不同* 的 `mysql数据库` 进行操作!!! (单一连接池*只能*对 *同一个mysql数据库* 进行操作)**　<br><br>
 \>\>\>\>\>　当**db对象**是一个连接池集群时, **db对象**可以使用以下6个方法:<br>
 > * `.$select()`,　`.$delete()`,　`.$update()`,　`.$insert()`,　`.$entire()`,　`.$query()`
 
