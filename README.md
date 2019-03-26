@@ -207,7 +207,7 @@ const option = {      //参数option是一个json
 const db = new async4mysql(option);      /* 由于参数option是一个json, async4mysql
 　　　　　　　　　　　　　　　　　　　　　　实例将会创建一个 单一连接池 */
 
-let sql_1 = `DELETE * FROM table WHERE id = '123456'`;
+let sql_1 = `UPDATE table SET value1='value1',value2='value2' WHERE id = '123456'`;
 
 db.update(sql_1).then(data => {  // .update()方法的.then()方法的回调函数参数data是sql_1语句的更新结果描述, 是一个 字符串
   console.log(data);      //  `--->  *async4mysql*模块: UPDATE table SET value1='aaa' WHERE id='123456'   --->  语句已执行!`　　
@@ -219,9 +219,9 @@ db.update(sql_1).then(data => {  // .update()方法的.then()方法的回调函�
   console.log(db.sql);
 });
 
-let sql_2 = `DELETE * FROM ?? WHERE id = ?`;
+let sql_2 = `UPDATE ?? SET ? WHERE id = ?`;
 
-db.update(sql_2, ['table', '123456']).then(data => {
+db.update(sql_2, ['table', {value1:'value1', value2:'value2'}, '123456']).then(data => {
   // todo...
 }).catch(err => {
   // todo...
@@ -235,7 +235,7 @@ const app = express();
 app.listen(8080);
 
 app.post('/damo', async (req, res) => {
-  let sql_1 = `DELETE * FROM table WHERE id = '123456'`;
+  let sql_1 = `UPDATE table SET value1='value1',value2='value2' WHERE id = '123456'`;
 
   let result_1 = await db.update(sql_1).catch(err => {     //在async函数中使用.update方法, 无需db对象的返回值　
     console.log(err)
@@ -245,9 +245,9 @@ app.post('/damo', async (req, res) => {
   console.log(db.sql);  /* *** new async4mysql()实例(即db对象)的.sql属性代表本次操作的 mysql语句
 　　　　　　　　　　　　　　db.sql 属性在每次执行 db对象的方法 后都会改变 */
 
-  let sql_2 = `DELETE * FROM ?? WHERE id = ?`;
+  let sql_2 = `UPDATE ?? SET ? WHERE id = ?`;
 
-  await db.update(sql_2, ['table', '123456']).catch(err => {
+  await db.update(sql_2, ['table', {value1:'value1', value2:'value2'}, '123456']).catch(err => {
     // todo...
   });
 
@@ -275,10 +275,10 @@ app.post('/damo', async (req, res) => {
 ******在非async函数中使用: ******
 
 const option = {                        //参数option是一个json
-  host:'localhost', 
-  user:'root', 
-  port:3306, 
-  password:'123456', 
+  host:'localhost',
+  user:'root',
+  port:3306,
+  password:'123456',
   database:'damo'
 };
 
@@ -791,7 +791,7 @@ const db = new async4mysql(opt);     //*由于参数option是一个Array, async4
   // 根据参数opt, 这个连接池集群里面将包含2个连接, 他们的名称分别是: 'CONNECT_1' 和 'CONNECT_2', 可以连接到不同的数据库进行操作
 
 
-let sql_1 = `DELETE * FROM table WHERE id = '123456'`;
+let sql_1 = `UPDATE table SET value1='value1',value2='value2' WHERE id = '123456'`;
 
 db.$update('CONNECT_1', sql_1).then(data => {  // .$update()方法的.then()方法的回调函数参数data是sql_1语句的更新结果描述, 是一个 字符串　
   console.log(data);      //  `--->  *async4mysql*模块: UPDATE table SET value1='aaa' WHERE id='123456'   --->  语句已执行!`　
@@ -803,9 +803,9 @@ db.$update('CONNECT_1', sql_1).then(data => {  // .$update()方法的.then()方�
   console.log(db.sql);
 });
 
-let sql_2 = `DELETE * FROM ?? WHERE id = ?`;
+let sql_2 = `UPDATE ?? SET ? WHERE id = ?`;
 
-db.$update('CONNECT_2', sql_2, ['table', '123456']).then(data => {
+db.$update('CONNECT_2', sql_2, ['table', {value1:'value1', value2:'value2'}, '123456']).then(data => {
   // todo...
 }).catch(err => {
   // todo...
@@ -819,7 +819,7 @@ const app = express();
 app.listen(8080);
 
 app.post('/damo', async (req, res) => {
-  let sql_1 = `DELETE * FROM table WHERE id = '123456'`;
+  let sql_1 = `UPDATE table SET value1='value1',value2='value2' WHERE id = '123456'`;
 
   let result_1 = await db.$update('CONNECT_1', sql_1).catch(err => {     //在async函数中使用.$update方法, 无需db对象的返回值　
     console.log(err)
@@ -829,9 +829,9 @@ app.post('/damo', async (req, res) => {
   console.log(db.sql);  /* *** new async4mysql()实例(即db对象)的.sql属性代表本次操作的 mysql语句
 　　　　　　　　　　　　　　　db.sql 属性在每次执行 db对象的方法 后都会改变 */
 
-  let sql_2 = `DELETE * FROM ?? WHERE id = ?`;
+  let sql_2 = `UPDATE ?? SET ? WHERE id = ?`;
 
-  await db.$update('CONNECT_2', sql_2, ['table', '123456']).catch(err => {
+  await db.$update('CONNECT_2', sql_2, ['table', {value1:'value1', value2:'value2'}, '123456']).catch(err => {
     // todo...
   });
 
