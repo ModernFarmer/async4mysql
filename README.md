@@ -1754,7 +1754,7 @@ app.post('/damo', async (req, res) => {
 
 ```javascript
 When the option parameter of new async4mysql(option) is an Array,
-new async4mysql(option) then creates a cluster of connection pools (A connection pool that contains one or more connections created by the mysql module's .createPoolCluster() method).
+new async4mysql(option) then creates a cluster of connection pools (A connection pool that contains one or more connections created by the mysql module’s .createPoolCluster() method).
 
 *Parameter format* ->
   [
