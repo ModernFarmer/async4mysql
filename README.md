@@ -1,7 +1,6 @@
-*本模块是将node-mysql模块进行简单封装, 旨在更加简单直观地进行同步操作异步调用或异步操作异步调用, 本模块的相关参数设定完全遵循node-mysql模块的相关设定.*
+*Promise 封装的 nodejs 中的 mysql模块.*
 　<br><br><br>
-*This module is a simple encapsulation of node-mysql module, aiming to make asynchronous invocation of synchronous operation or asynchronous operation and asynchronous invocation more simple and intuitive. The parameter setting of this module fully follows the relevant setting of node-mysql module.*
-**The English API is at the back of the page!**<br><br><br>
+*The mysql module in NodeJS encapsulated by Promise.**<br><br><br>
 **下载:**
 
 ```javascript
