@@ -1,0 +1,59 @@
+{
+  "__npminstall_done": "Wed Oct 09 2019 09:27:45 GMT+0800 (GMT+08:00)",
+  "_from": "async4mysql",
+  "_id": "async4mysql@1.1.10",
+  "_inBundle": false,
+  "_integrity": "sha512-6Kb0EevyDnz7ue4GNSwoOuC8rqEZblIHZidPQ4/J/Qph9e6Jo4muWCLit158FTKT1dTV/HNs7X8wXz63XtSWvg==",
+  "_location": "/async4mysql",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "async4mysql",
+    "name": "async4mysql",
+    "escapedName": "async4mysql",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/async4mysql/-/async4mysql-1.1.10.tgz",
+  "_shasum": "94317d7fccb35937df6edff32414bec1308b18d3",
+  "_spec": "async4mysql",
+  "_where": "D:\\temporary",
+  "author": {
+    "name": "UncleMao"
+  },
+  "bugs": {
+    "url": "https://github.com/ModernFarmer/async4mysql/issues",
+    "email": "850558682@qq.com"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "mysql": "^2.13.0"
+  },
+  "deprecated": false,
+  "description": "同步或异步操作mysql模块,避免回调地狱. Operate mysql modules synchronously or asynchronously, avoiding callback hell",
+  "homepage": "https://github.com/ModernFarmer/async4mysql#readme",
+  "keywords": [
+    "async",
+    "mysql",
+    "promise",
+    "node",
+    "await"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "async4mysql",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ModernFarmer/async4mysql.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.1.10"
+}
